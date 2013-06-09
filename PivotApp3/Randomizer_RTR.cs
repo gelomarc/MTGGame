@@ -99,7 +99,7 @@ namespace PivotApp3
                     if (Temp.rarity == 3)
                     {
                         mrarecounter++;
-                        if (mrarecounter == rareNumbers[i])
+                        if (mrarecounter == rareNumbers[0])
                         {
                             FinishedBooster.Add(Temp); // dodaje karte do boostera
                             break;
@@ -118,7 +118,7 @@ namespace PivotApp3
                     if (Temp.rarity == 2)
                     {
                         rarecounter++;
-                        if (rarecounter == rareNumbers[i])
+                        if (rarecounter == rareNumbers[0])
                         {
                             FinishedBooster.Add(Temp); // dodaje karte do boostera
                             break;
