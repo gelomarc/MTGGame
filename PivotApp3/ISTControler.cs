@@ -12,7 +12,7 @@ namespace PivotApp3
         private ISTControler()
         {}
 
-        public ISTControler Instance
+        public static ISTControler Instance
         {
             get
             {

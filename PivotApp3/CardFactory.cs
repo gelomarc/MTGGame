@@ -38,7 +38,7 @@ namespace PivotApp3
         }
 
         public void CreateBase()
-        {//brakuje obslogi isolated storage
+        {
             ContenerComposite main = new ContenerComposite("Main");
             Collection rtr = new Collection("Rtr");
             String a;
@@ -58,7 +58,7 @@ namespace PivotApp3
             }
             file.Close();
             main.Add(rtr);
-            ISTControler.Instance.add();
+            ISTControler.Instance.add("Main",main);
           
         }
 
