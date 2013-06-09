@@ -19,6 +19,10 @@ namespace PivotApp3
         {
 
         }
+        ~FabrykaKart()
+        {
+            instancja = null;
+        }
 
    public static Karta Instancja
    {
