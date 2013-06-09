@@ -7,5 +7,13 @@ namespace PivotApp3
 {
     class Contener
     {
+        public String Name;
+        
+
+        public Contener(String newName)
+        {
+            Name = newName;
+           
+        }
     }
 }

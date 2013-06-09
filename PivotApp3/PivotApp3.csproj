@@ -62,13 +62,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FabrykaKart.cs" />
-    <Compile Include="Karta.cs" />
+    <Compile Include="Booster.cs" />
+    <Compile Include="Collection.cs" />
+    <Compile Include="Contener.cs" />
+    <Compile Include="ContenerComposite.cs" />
+    <Compile Include="Deck.cs" />
+    <Compile Include="CardFactory.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="ISTControler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sealed.cs" />
+    <Compile Include="SealedPool.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>

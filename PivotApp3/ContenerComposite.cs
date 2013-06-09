@@ -5,29 +5,28 @@ using System.Text;
 
 namespace PivotApp3
 {
-    class ContenerComposite
+    class ContenerComposite:Contener
     {
-        String Name;
-        List<ContenerComposite> Childs;
+        
         int ChildIdicator;
-        public ContenerComposite(String NewName)
+        public List<Contener> Childs;
+        public ContenerComposite(String NewName): base(NewName)
         {
-            Name = NewName;
-            Childs = new List<ContenerComposite>();
+            Childs = new List<Contener>();
             ChildIdicator = 0;
         }
-        public void Add(ContenerComposite Child)
+        public void Add(Contener Child)
         {
             Childs.Add(Child);
         }
-        public void Delete(ContenerComposite Child)
+        public void Delete(Contener Child)
         {
             Childs.Remove(Child);
             
         }
-        public ContenerComposite GetChild()
+        public Contener GetChild()
         {
-           ContenerComposite CurrenChild=Childs.ElementAt(ChildIdicator);
+           Contener CurrenChild=Childs.ElementAt(ChildIdicator);
            if (CurrenChild != null)
            {
                ChildIdicator++;

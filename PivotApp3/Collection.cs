@@ -5,8 +5,9 @@ using System.Text;
 
 namespace PivotApp3
 {
-    class Collection:ContenerComposite
+    class Collection:Contener
     {
+        List<Card> cardList;
         int NumberRare;
         int NumberMRare;
         int NumberCommon;
@@ -14,6 +15,7 @@ namespace PivotApp3
 
         public Collection(string NewName) : base(NewName)
         {
+            cardList = new List<Card>();
             NumberCommon = 0;
             NumberMRare = 0;
             NumberRare = 0;
@@ -21,12 +23,47 @@ namespace PivotApp3
 
         }
 
-        public void AddCard()
+        public void AddCard(Card newCard)
         {
+            cardList.Add(newCard);
+            switch(newCard.rarity){
+                case 0:
+                    NumberMRare++;
+                    break;
+                case 1:
+                    NumberRare++;
+                    break;
+                case 2:
+                    NumberUCommon++;
+                    break;
+                default :
+                    NumberCommon++;
+                    break;
+            }
+
+           
         }
 
-        public void RemoveCard()
-        { 
+        public void RemoveCard(Card deletedCard)
+        {
+            cardList.Remove(deletedCard);
+
+            switch (deletedCard.rarity)
+            {
+                case 0:
+                    NumberMRare--;
+                    break;
+                case 1:
+                    NumberRare--;
+                    break;
+                case 2:
+                    NumberUCommon--;
+                    break;
+                default:
+                    NumberCommon--;
+                    break;
+            }
+
         }
 
         public void SetMemento()
