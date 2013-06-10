@@ -14,12 +14,12 @@ namespace PivotApp3
     
     public class Card
     {
-        String name;
-        int color;
+        public String name;
+        public int color;
         public int rarity;
-        int cost;
-        String picture;
-        bool isRent;
+        public int cost;
+        public String picture;
+        public bool isRent;
         public Card(int newColor, int newRarity, int newCost, String newName, String newPicture)
         {
             name = newName;
@@ -45,9 +45,9 @@ namespace PivotApp3
         {
             isRent = false;
         }
-        bool Equals(Card egzemplarz1)
+        public bool equals(Card egzemplarz1)
         {
-            if (this.name == egzemplarz1.name)
+            if (name.Equals(egzemplarz1.name))
                 return true;
             return false;
         }

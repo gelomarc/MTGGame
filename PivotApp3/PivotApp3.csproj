@@ -65,6 +65,7 @@
     <Compile Include="Booster.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="CardFactory.cs" />
+    <Compile Include="CollectionLibrary.cs" />
     <Compile Include="ContenerIterator.cs" />
     <Compile Include="ISTControler.cs" />
     <Compile Include="Randomizer_RTR.cs" />

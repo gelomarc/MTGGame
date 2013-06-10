@@ -16,25 +16,95 @@ namespace PivotApp3
 {
     public class ContenerIterator
     {
-        int index;
-        private List<Contener> Temp;
+        int collectionIndex;
+        int compositeIndex;
+        ContenerComposite Head;
+        int size;
+        
         public ContenerIterator()
         {
-            index = 0;
-           // Temp = (List(ISTControler.Instance.find("Main")));
+            collectionIndex = 0;
+            compositeIndex = 0;
+            Head=(ContenerComposite)ISTControler.Instance.find("Main");
+            size=Head.Childs.Capacity;
+            
         }
-        public Contener Next()
+        public void NextColection()
         {
-            //ISTControler.Instance.find("Main").Childs.ElementAt(index);
+            if (collectionIndex<size)
+            {
+            Collection temp = new Collection("");
+            Contener current = Head.Childs.ElementAt(collectionIndex);
+           
+                if (!current.GetType().Equals(temp.GetType()))
+                {
+                    collectionIndex++;
+                    NextColection();
+                }
+            }
+           
         }
-        public Contener Previous()
+        public void NextComposite()
         {
+            if (compositeIndex < size)
+            {
+                ContenerComposite temp = new ContenerComposite("");
+                Contener current = Head.Childs.ElementAt(compositeIndex);
+
+                if (!current.GetType().Equals(temp.GetType()))
+                {
+                    compositeIndex++;
+                    NextComposite();
+                }
+            }
+
         }
-        public bool isEnd()
+        public void PreviousCollection()
         {
+            collectionIndex--;
+            if (collectionIndex >0)
+            {
+                Collection temp = new Collection("");
+                Contener current = Head.Childs.ElementAt(collectionIndex);
+
+                if (!current.GetType().Equals(temp.GetType()))
+                {
+                    PreviousCollection();
+                }
+            }
         }
-        public Contener getCurrent()
+        public void PreviousComposite()
         {
+            compositeIndex--;
+            if (compositeIndex > 0)
+            {
+                Collection temp = new Collection("");
+                Contener current = Head.Childs.ElementAt(compositeIndex);
+
+                if (!current.GetType().Equals(temp.GetType()))
+                {
+                    PreviousComposite();
+                }
+            }
+        }
+
+        public void Down()
+        {
+            Head=getCurrentComposite();
+        }
+
+        public void Up()
+        {
+            Head = (ContenerComposite)ISTControler.Instance.find("Main");
+        }
+            
+        public Contener getCurrentCollection()
+        {
+            return Head.Childs.ElementAt(collectionIndex);
+        }
+        public ContenerComposite getCurrentComposite()
+        {
+            return Head;
         }
     }
 }
