@@ -22,13 +22,13 @@ namespace PivotApp3
         }
         public static Booster RandomizeBooster_RTR()
         {
-            Karta Temp = new Karta();
+            Card Temp = new Card();
             Booster FinishedBooster = new Booster();
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 11; i++) //wybiera 11 losowych commonow
             {
                 Random Number= new Random();
                 commonNumbers[i]= Number.Next(1,ISR.getByName("RTR").NumberCommon); //ISR.getByName wyszukuje kolekcji o nazwie RTR
-                for(int j = i-1; j>=0; j--)
+                for(int j = i-1; j>=0; j--) //sprawdza czy common juz wystepowal, jesli tak to szuka jeszcze raz
                     if(commonNumbers[i] == commonNumbers[j])
                     {
                         i--;
@@ -40,14 +40,14 @@ namespace PivotApp3
             for (int i = 0; i < 11; i++)
             {
                 int commoncounter=0;
-                foreach (Karta Temp in ISR.getByName("RTR").CardLst)
+                foreach (Card Temp in ISR.getByName("RTR").CardLst)
                 {
                     if(Temp.rarity==0)
                     {
                         commoncounter++;
                         if (commoncounter == commonNumbers[i])
                         {
-                            FinishedBooster.Add(Temp); // dodaje karte do boostera
+                            FinishedBooster.AddCard(Temp); // dodaje karte do boostera
                             break;
                         }
                     }
@@ -71,14 +71,14 @@ namespace PivotApp3
             for (int i = 0; i < 3; i++)
             {
                 int uncommoncounter = 0;
-                foreach (Karta Temp in ISR.getByName("RTR").CardLst)
+                foreach (Card Temp in ISR.getByName("RTR").CardLst)
                 {
                     if (Temp.rarity == 1)
                     {
                         uncommoncounter++;
                         if (uncommoncounter == uncommonNumbers[i])
                         {
-                            FinishedBooster.Add(Temp); // dodaje karte do boostera
+                            FinishedBooster.AddCard(Temp); // dodaje karte do boostera
                             break;
                         }
                     }
@@ -94,14 +94,14 @@ namespace PivotApp3
                 Random Number = new Random();
                 rareNumbers[0] = Number.Next(1, ISR.getByName("RTR").NumberMRare);
                 int mrarecounter = 0;
-                foreach (Karta Temp in ISR.getByName("RTR").CardLst)
+                foreach (Card Temp in ISR.getByName("RTR").CardLst)
                 {
                     if (Temp.rarity == 3)
                     {
                         mrarecounter++;
                         if (mrarecounter == rareNumbers[0])
                         {
-                            FinishedBooster.Add(Temp); // dodaje karte do boostera
+                            FinishedBooster.AddCard(Temp); // dodaje karte do boostera
                             break;
                         }
                     }
@@ -113,14 +113,14 @@ namespace PivotApp3
                 Random Number = new Random();
                 rareNumbers[0] = Number.Next(1, ISR.getByName("RTR").NumberRare);
                 int rarecounter = 0;
-                foreach (Karta Temp in ISR.getByName("RTR").CardLst)
+                foreach (Card Temp in ISR.getByName("RTR").CardLst)
                 {
                     if (Temp.rarity == 2)
                     {
                         rarecounter++;
                         if (rarecounter == rareNumbers[0])
                         {
-                            FinishedBooster.Add(Temp); // dodaje karte do boostera
+                            FinishedBooster.AddCard(Temp); // dodaje karte do boostera
                             break;
                         }
                     }

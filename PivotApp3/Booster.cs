@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PivotApp3
 {
-    class Booster
+    class Booster:Collection
     {
     }
 }

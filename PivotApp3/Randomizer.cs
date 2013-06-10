@@ -23,7 +23,7 @@ namespace PivotApp3
             for (int i = 0; i < 6; i++)
                 if (Boostery[i] == "RTR")
                     TempBooster = Randomizer_RTR.RandomizeBooster_RTR();
-            FinishedSealedPool.Add(TempBooster);
+            FinishedSealedPool.AddBooster(TempBooster);//dodawanie boostera do sealedpool
             return FinishedSealedPool;
         }
     }

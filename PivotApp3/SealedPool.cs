@@ -5,7 +5,12 @@ using System.Text;
 
 namespace PivotApp3
 {
-    class SealedPool
+    class SealedPool:Collection
+
     {
+        public void AddBooster(Booster ExtraBooster)
+        {
+            this.cardList.AddRange(ExtraBooster.cardList);
+        }
     }
 }

@@ -63,17 +63,20 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Booster.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="CardFactory.cs" />
+    <Compile Include="ContenerIterator.cs" />
+    <Compile Include="ISTControler.cs" />
+    <Compile Include="Randomizer_RTR.cs" />
     <Compile Include="Collection.cs" />
     <Compile Include="Contener.cs" />
     <Compile Include="ContenerComposite.cs" />
     <Compile Include="Deck.cs" />
-    <Compile Include="CardFactory.cs" />
-    <Compile Include="Card.cs" />
-    <Compile Include="ISTControler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Randomizer.cs" />
     <Compile Include="Sealed.cs" />
     <Compile Include="SealedPool.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
