@@ -26,7 +26,7 @@
         <!--Pivot Control-->
         <controls:Pivot Title="BAZA KART" BorderBrush="Black" FontSize="29.333" Foreground="{StaticResource PhoneInverseBackgroundBrush}">
         	<controls:Pivot.Background>
-        		<ImageBrush ImageSource="/orzchow2h .jpg"/>
+        		<ImageBrush ImageSource="/PivotApp3;component/orzchow2h%20.jpg"/>
         	</controls:Pivot.Background>
             <!--Pivot item one-->
             <controls:PivotItem Header="Galeria" Margin="16,8,8,20">

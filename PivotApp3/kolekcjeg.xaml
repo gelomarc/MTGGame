@@ -19,7 +19,7 @@
         <!--Pivot Control-->
         <controls:Pivot Title="KOLEKCJE" FontSize="29.333">
         	<controls:Pivot.Background>
-        		<ImageBrush Stretch="Fill" ImageSource="/orzchow2h .jpg"/>
+        		<ImageBrush Stretch="Fill" ImageSource="/PivotApp3;component/orzchow2h%20.jpg"/>
         	</controls:Pivot.Background>
             <!--Pivot item one-->
             <controls:PivotItem Header="">

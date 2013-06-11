@@ -23,6 +23,10 @@ namespace PivotApp3
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
+            Kolekcja bla = new Kolekcja("/cards.txt");
+            Ist ISTbla = new Ist();
+            ISTbla.dodaj("baza", bla);
+
         }
 
         // Load data for the ViewModel Items
@@ -32,6 +36,26 @@ namespace PivotApp3
             {
                 App.ViewModel.LoadData();
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/bazakart1.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/kolekcja1.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/talie1.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/sealed1.xaml", UriKind.Relative));
         }
     }
 }

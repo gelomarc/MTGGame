@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </controls:Pivot.BorderBrush>
             <controls:Pivot.Background>
-                <ImageBrush ImageSource="\orzchow2h .jpg" />
+                <ImageBrush ImageSource="/PivotApp3;component/orzchow2h%20.jpg" />
             </controls:Pivot.Background>
             <!--Pivot item one-->
             <controls:PivotItem FontFamily="Calligraph421 BT" Header="">
