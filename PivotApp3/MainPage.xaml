@@ -13,44 +13,41 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" DataContext="{Binding}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <!--Pivot Control-->
-        <controls:Pivot Title="MY APPLICATION">
+    <Grid x:Name="LayoutRoot">
+        <controls:Pivot Title="MTG Toolbox" Foreground="{StaticResource PhoneContrastBackgroundBrush}"  FontSize="64" FontFamily="Segoe WP">
+            <controls:Pivot.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </controls:Pivot.BorderBrush>
+            <controls:Pivot.Background>
+                <ImageBrush ImageSource="\orzchow2h .jpg" />
+            </controls:Pivot.Background>
             <!--Pivot item one-->
-            <controls:PivotItem Header="first">
+            <controls:PivotItem FontFamily="Calligraph421 BT" Header="">
                 <!--Double line list with text wrapping-->
-                <ListBox x:Name="FirstListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                          <StackPanel Margin="0,0,0,17" Width="432" Height="78">
-                              <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                              <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                          </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
+                <ListBox x:Name="FirstListBox" Margin="0,0,-12,0" Background="{x:Null}" Foreground="{x:Null}">
+                    <Button Content="Baza kart" Height="155" Width="400" Foreground="#FFFDFBFB" BorderBrush="#FFF9F3F3" RenderTransformOrigin="0.496,0.464" Padding="10,3,10,5" Margin="30,11,0,0" Background="{x:Null}" FontFamily="Segoe WP" FontSize="64" Click="Button_Click" />
+                    <Button Content="Kolekcje" Height="155" Width="400" Margin="30,0,0,0" Background="{x:Null}" FontSize="64" FontFamily="Segoe WP" Click="Button_Click_1" />
+                    <Button Content="Talie" Height="155" RenderTransformOrigin="0.493,0.5" Width="400" Margin="30,0,0,0" Background="{x:Null}" FontSize="64" FontFamily="Segoe WP" Click="Button_Click_2" />
+                    <Button Content="Sealed" Height="155" Width="400" Margin="30,0,0,0" FontSize="64" FontFamily="Segoe WP" Click="Button_Click_3">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"/>
+                        </Button.Background>
+                    </Button>
                 </ListBox>
             </controls:PivotItem>
- 
             <!--Pivot item two-->
-            <controls:PivotItem Header="second"> 
-                <!--Triple line list no text wrapping-->
-                    <ListBox x:Name="SecondListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,0,0,17">
-                                    <TextBlock Text="{Binding LineOne}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding LineThree}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-            </controls:PivotItem>
         </controls:Pivot>
+        <!--Pivot Control-->
+        <Grid.Background>
+            <ImageBrush />
+        </Grid.Background>
     </Grid>
- 
     <!--Sample code showing usage of ApplicationBar-->
     <!--<phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
